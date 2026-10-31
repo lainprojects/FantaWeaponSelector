@@ -5,8 +5,8 @@
 
 public Plugin:myinfo = 
 { 
-	name = "Fanta Weapon Pref", 
-	author = "rains", 
+	name = "clover weapon selector", 
+	author = "lain", 
 	description = "Allows players to set a preference for weapons after CS:GO inventory services got shut down.", 
 	version = "v1.0.0"
 };
@@ -72,7 +72,7 @@ public Action HandleSpawn(Handle timer, any userId)
 	if (g_iPlayerNotified[client] >= 1)
 		return Plugin_Stop;
 
-	CPrintToChat(client, "{ORANGE}fanta{NORMAL} • {ORANGE}!deagle{NORMAL}/{ORANGE}!r8{NORMAL} • {ORANGE}!cz{NORMAL}/{ORANGE}!tec9{NORMAL} • {ORANGE}!usp{NORMAL}/{ORANGE}!p2000{NORMAL} at any time to set your weapon pref.");
+	CPrintToChat(client, "{GREEN}clover{NORMAL} • {GREEN}!deagle{NORMAL}/{GREEN}!r8{NORMAL} • {GREEN}!cz{NORMAL}/{GREEN}!tec9{NORMAL} • {GREEN}!usp{NORMAL}/{GREEN}!p2000{NORMAL} at any time to set your weapon pref.");
 
 	return Plugin_Stop;
 }
@@ -121,7 +121,7 @@ public Action Command_Handler(const char[] command, int client, int args)
 {
 	if (args > 1)
 	{
-		char com[128] = "{ORANGE}fanta{NORMAL} Usage: !";
+		char com[128] = "{GREEN}clover{NORMAL} Usage: !";
 		StrCat(com, sizeof(com), command);
 		
 		ReplyToCommand(client, com);
@@ -171,7 +171,7 @@ public Action Command_Handler(const char[] command, int client, int args)
 		weapon = "Tec-9/Five-Seven";
 	}
 
-	char com[128] = "{ORANGE}fanta{NORMAL} • Current preference: {ORANGE}";
+	char com[128] = "{GREEN}clover{NORMAL} • Current preference: {GREEN}";
 	StrCat(com, sizeof(com), weapon);
 	ReplyToCommand(client, com);
 
